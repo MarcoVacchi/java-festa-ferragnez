@@ -9,10 +9,10 @@ public class CheckGuest {
                 "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic" };
         Scanner input = new Scanner(System.in);
 
-        String name;
+        // String name;
 
         System.out.print("Scrivi il tuo nome: ");
-        name = input.nextLine().trim().replaceAll("\\s+", " ");
+        String name = input.nextLine().trim().replaceAll("\\s+", " ");
         input.close();
 
         boolean isPersonInList = false;
@@ -21,25 +21,30 @@ public class CheckGuest {
         while (!isPersonInList && index < listaInvitati.length) {
             if (name.equalsIgnoreCase(listaInvitati[index])) {
                 isPersonInList = true;
-                System.out.println("Persona nella lista in posizione: " + index);
+
             } else {
                 index++;
-                System.out.println("Persona non presente nella lista");
             }
         }
 
-        // for (int i = 0; i < listaInvitati.length; i++) {
-        // System.out.println(listaInvitati[i]);
-        // if (name.equalsIgnoreCase(listaInvitati[i])) {
-        // System.out.println("Nome nella lista in posizione: " + i);
-        // break;
-        // } else {
-        // System.out.println("Nome non presente");
-        // }
-        // }
+        String message = isPersonInList
+                ? name + ": questo nome e' presente nella lista in posizione: " + index
+                : name + ":  questo nome non e' presente nella lista";
+
+        System.out.println(message);
 
     }
 }
+
+// for (int i = 0; i < listaInvitati.length; i++) {
+// System.out.println(listaInvitati[i]);
+// if (name.equalsIgnoreCase(listaInvitati[i])) {
+// System.out.println("Nome nella lista in posizione: " + i);
+// break;
+// } else {
+// System.out.println("Nome non presente");
+// }
+// }
 
 // Nel programma occorre:
 // - creare e inizializzare l’array contenente i nomi degli invitati
