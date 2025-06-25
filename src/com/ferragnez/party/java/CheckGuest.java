@@ -15,15 +15,28 @@ public class CheckGuest {
         name = input.nextLine();
         input.close();
 
-        for (int i = 0; i < listaInvitati.length; i++) {
-            System.out.println(listaInvitati[i]);
-            if (name.equalsIgnoreCase(listaInvitati[i])) {
-                System.out.println("Nome nella lista in posizione: " + i);
-                break;
+        boolean isPersonInList = false;
+        int index = 0;
+
+        while (!isPersonInList && index < listaInvitati.length) {
+            if (name.equalsIgnoreCase(listaInvitati[index])) {
+                isPersonInList = true;
+                System.out.println("Persona nella lista in posizione: " + index);
             } else {
-                System.out.println("Nome non presente");
+                index++;
+                System.out.println("Persona non presente nella lista")
             }
         }
+
+        // for (int i = 0; i < listaInvitati.length; i++) {
+        // System.out.println(listaInvitati[i]);
+        // if (name.equalsIgnoreCase(listaInvitati[i])) {
+        // System.out.println("Nome nella lista in posizione: " + i);
+        // break;
+        // } else {
+        // System.out.println("Nome non presente");
+        // }
+        // }
 
     }
 }
