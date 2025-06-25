@@ -24,7 +24,7 @@ public class CheckGuest {
                 System.out.println("Persona nella lista in posizione: " + index);
             } else {
                 index++;
-                System.out.println("Persona non presente nella lista")
+                System.out.println("Persona non presente nella lista");
             }
         }
 
