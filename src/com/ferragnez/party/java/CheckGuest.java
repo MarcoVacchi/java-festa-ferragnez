@@ -12,7 +12,7 @@ public class CheckGuest {
         String name;
 
         System.out.print("Scrivi il tuo nome: ");
-        name = input.nextLine();
+        name = input.nextLine().trim().replaceAll("\\s+", " ");
         input.close();
 
         boolean isPersonInList = false;
